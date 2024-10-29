@@ -12,5 +12,6 @@
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "material-icon-theme.activeIconPack": "nest" // iconos de nestjs para los archivos
 }
