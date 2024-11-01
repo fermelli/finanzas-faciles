@@ -1,6 +1,6 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
-enum TipoGrupo {
+export enum TipoGrupo {
   INGRESO = 'ingreso',
   EGRESO = 'egreso',
 }
