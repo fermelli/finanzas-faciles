@@ -1,7 +1,11 @@
-import { BadRequestException, Injectable } from '@nestjs/common';
+import {
+  BadRequestException,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Grupo } from './entities/grupo.entity';
-import { Repository } from 'typeorm';
+import { Equal, Repository } from 'typeorm';
 import { Respuesta } from 'src/app/types';
 import { CreateGrupoDto } from './dtos/create-grupo.dto';
 
@@ -46,5 +50,24 @@ export class GruposService {
 
       throw new BadRequestException('Error al crear el grupo');
     }
+  }
+
+  async findOne(id: number): Promise<Respuesta<Grupo>> {
+    const grupo = await this.grupoRepository.findOne({
+      where: {
+        id: Equal(id),
+      },
+    });
+
+    if (!grupo) {
+      throw new NotFoundException('Grupo no encontrado');
+    }
+
+    return {
+      message: 'Grupo recuperado correctamente',
+      error: null,
+      statusCode: 200,
+      data: grupo,
+    };
   }
 }
