@@ -1,4 +1,12 @@
-import { Body, Controller, Get, Param, Patch, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Patch,
+  Post,
+} from '@nestjs/common';
 import { GruposService } from './grupos.service';
 import { Grupo } from './entities/grupo.entity';
 import { Respuesta } from 'src/app/types';
@@ -33,5 +41,10 @@ export class GruposController {
     @Body() updateGrupoDto: UpdateGrupoDto,
   ): Promise<Respuesta<Grupo>> {
     return await this.gruposService.update(id, updateGrupoDto);
+  }
+
+  @Delete(':id')
+  async remove(@Param() { id }: FindOneParamsDto): Promise<Respuesta<Grupo>> {
+    return await this.gruposService.remove(id);
   }
 }

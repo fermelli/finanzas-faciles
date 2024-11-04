@@ -91,6 +91,23 @@ export class GruposService {
     }
   }
 
+  async remove(id: number): Promise<Respuesta<Grupo>> {
+    const grupo = (await this.findOne(id)).data;
+
+    try {
+      await this.grupoRepository.remove(grupo);
+
+      return {
+        message: 'Grupo eliminado correctamente',
+        error: null,
+        statusCode: 200,
+        data: grupo,
+      };
+    } catch (error) {
+      this.manejarErrores(error);
+    }
+  }
+
   private manejarErrores(error: any) {
     if (error.code === 'ER_DUP_ENTRY') {
       throw new BadRequestException('El grupo ya existe');
