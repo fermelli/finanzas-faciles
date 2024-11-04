@@ -15,6 +15,7 @@ import { GruposModule } from './grupos/grupos.module';
       database: 'finanzas_faciles_db',
       autoLoadEntities: true,
       synchronize: true,
+      logging: true,
     }),
     GruposModule,
   ],

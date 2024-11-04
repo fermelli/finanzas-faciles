@@ -1,9 +1,10 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Patch, Post } from '@nestjs/common';
 import { GruposService } from './grupos.service';
 import { Grupo } from './entities/grupo.entity';
 import { Respuesta } from 'src/app/types';
 import { CreateGrupoDto } from './dtos/create-grupo.dto';
 import { FindOneParamsDto } from '../common/dtos/find-one-params.dto';
+import { UpdateGrupoDto } from './dtos/update-grupo.dto';
 
 @Controller('grupos')
 export class GruposController {
@@ -24,5 +25,13 @@ export class GruposController {
   @Get(':id')
   async findOne(@Param() { id }: FindOneParamsDto): Promise<Respuesta<Grupo>> {
     return await this.gruposService.findOne(id);
+  }
+
+  @Patch(':id')
+  async update(
+    @Param() { id }: FindOneParamsDto,
+    @Body() updateGrupoDto: UpdateGrupoDto,
+  ): Promise<Respuesta<Grupo>> {
+    return await this.gruposService.update(id, updateGrupoDto);
   }
 }
