@@ -1,0 +1,141 @@
+{
+	"info": {
+		"_postman_id": "fb6933b3-2ce7-42d9-aa35-601a13126697",
+		"name": "Finanzas Faciles",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8046053"
+	},
+	"item": [
+		{
+			"name": "Grupos",
+			"item": [
+				{
+					"name": "findAll Grupos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/grupos",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"grupos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create Grupos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"TRANSPORTE\",\r\n    \"tipo\": \"egreso\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/grupos",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"grupos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findOne Grupos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/grupos/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"grupos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update Grupos",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"ROPA\",\r\n    \"tipo\": \"egreso\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/grupos/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"grupos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove Grupos",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/grupos/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"grupos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Hello World",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000",
+					"host": [
+						"localhost"
+					],
+					"port": "3000"
+				}
+			},
+			"response": []
+		}
+	]
+}
