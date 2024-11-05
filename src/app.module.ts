@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { GruposModule } from './grupos/grupos.module';
+import { MetodosPagosModule } from './app/metodosPagos/metodosPagos.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { GruposModule } from './grupos/grupos.module';
       logging: true,
     }),
     GruposModule,
+    MetodosPagosModule,
   ],
   controllers: [AppController],
   providers: [AppService],
