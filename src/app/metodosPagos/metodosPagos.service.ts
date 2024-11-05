@@ -18,14 +18,14 @@ export class MetodosPagosService {
 
   private manejarErrores(error: any) {
     if (error.code === 'ER_DUP_ENTRY') {
-      throw new BadRequestException('El grupo ya existe');
+      throw new BadRequestException('El metodo de pago ya existe');
     }
 
     if (error.code === 'WARN_DATA_TRUNCATED') {
       throw new BadRequestException('Campo incorrecto');
     }
 
-    throw new BadRequestException('Error al actualizar el grupo');
+    throw new BadRequestException('Error al actualizar el metodo de pago');
   }
 
   async create(
@@ -36,6 +36,7 @@ export class MetodosPagosService {
 
     try {
       await this.metodoPagoRepository.save(newMetodoPago);
+
       return {
         message: 'El metodo de pago se creo correctamente',
         error: null,
