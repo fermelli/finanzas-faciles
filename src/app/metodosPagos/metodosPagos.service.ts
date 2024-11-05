@@ -35,7 +35,7 @@ export class MetodosPagosService {
       await this.metodoPagoRepository.create(createMetodoPagoDto);
 
     try {
-      this.metodoPagoRepository.save(newMetodoPago);
+      await this.metodoPagoRepository.save(newMetodoPago);
       return {
         message: 'El metodo de pago se creo correctamente',
         error: null,
