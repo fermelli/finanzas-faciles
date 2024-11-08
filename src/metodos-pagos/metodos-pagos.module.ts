@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
-import { MetodosPagosController } from './metodosPagos.controller';
-import { MetodosPagosService } from './metodosPagos.service';
+import { MetodosPagosController } from './metodos-pagos.controller';
+import { MetodosPagosService } from './metodos-pagos.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { MetodoPago } from './entities/metodoPago.entity';
+import { MetodoPago } from './entities/metodo-pago.entity';
 
 @Module({
   imports: [TypeOrmModule.forFeature([MetodoPago])],

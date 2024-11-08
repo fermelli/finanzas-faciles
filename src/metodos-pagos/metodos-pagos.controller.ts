@@ -7,11 +7,11 @@ import {
   Patch,
   Post,
 } from '@nestjs/common';
-import { MetodosPagosService } from './metodosPagos.service';
-import { Respuesta } from '../types';
-import { MetodoPago } from './entities/metodoPago.entity';
+import { MetodosPagosService } from './metodos-pagos.service';
+import { Respuesta } from '../app/types';
+import { MetodoPago } from './entities/metodo-pago.entity';
 import { FindOneParamsDto } from 'src/common/dtos/find-one-params.dto';
-import { CreateMetodoPagoDto } from './dtos/create-metodoPago.dto';
+import { CreateMetodoPagoDto } from './dtos/create-metodo-pago.dto';
 
 @Controller('metodos-pagos')
 export class MetodosPagosController {

@@ -5,9 +5,9 @@ import {
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Equal, Repository } from 'typeorm';
-import { MetodoPago } from './entities/metodoPago.entity';
-import { Respuesta } from '../types';
-import { CreateMetodoPagoDto } from './dtos/create-metodoPago.dto';
+import { MetodoPago } from './entities/metodo-pago.entity';
+import { Respuesta } from '../app/types';
+import { CreateMetodoPagoDto } from './dtos/create-metodo-pago.dto';
 
 @Injectable()
 export class MetodosPagosService {

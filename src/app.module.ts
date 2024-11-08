@@ -3,7 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { GruposModule } from './grupos/grupos.module';
-import { MetodosPagosModule } from './app/metodosPagos/metodosPagos.module';
+import { MetodosPagosModule } from './metodos-pagos/metodos-pagos.module';
 
 @Module({
   imports: [
