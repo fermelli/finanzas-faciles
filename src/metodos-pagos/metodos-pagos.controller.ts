@@ -30,9 +30,9 @@ export class MetodosPagosController {
     return metodosPagosList;
   }
 
-  @Get(':id') // Recordar: Por que se hace la desestructuración del id?
+  @Get(':id')
   async findOne(
-    @Param() { id }: FindOneParamsDto, //FindOneParamsDto transforma el id string a number?
+    @Param() { id }: FindOneParamsDto,
   ): Promise<Respuesta<MetodoPago>> {
     return await this.metodosPagosService.findOne(id);
   }

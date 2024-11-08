@@ -6,5 +6,3 @@ export class CreateMetodoPagoDto {
   @MaxLength(50, { message: 'El nombre no debe tener mas de 50 caracteres' })
   nombre: string;
 }
-
-// QUESTION: La entidad al tener un solo campo, ya no es necesario un update dto?
