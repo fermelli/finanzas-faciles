@@ -1,31 +1,18 @@
-import {
-  BadRequestException,
-  Injectable,
-  NotFoundException,
-} from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Equal, Repository } from 'typeorm';
 import { MetodoPago } from './entities/metodo-pago.entity';
 import { Respuesta } from '../app/types';
 import { CreateMetodoPagoDto } from './dtos/create-metodo-pago.dto';
+import { BaseService } from 'src/app/base.service';
 
 @Injectable()
-export class MetodosPagosService {
+export class MetodosPagosService extends BaseService {
   constructor(
     @InjectRepository(MetodoPago)
     private readonly metodoPagoRepository: Repository<MetodoPago>,
-  ) {}
-
-  private manejarErrores(error: any) {
-    if (error.code === 'ER_DUP_ENTRY') {
-      throw new BadRequestException('El metodo de pago ya existe');
-    }
-
-    if (error.code === 'WARN_DATA_TRUNCATED') {
-      throw new BadRequestException('Campo incorrecto');
-    }
-
-    throw new BadRequestException('Error al actualizar el metodo de pago');
+  ) {
+    super();
   }
 
   async create(
