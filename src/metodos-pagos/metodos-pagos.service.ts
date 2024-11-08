@@ -31,8 +31,7 @@ export class MetodosPagosService {
   async create(
     createMetodoPagoDto: CreateMetodoPagoDto,
   ): Promise<Respuesta<MetodoPago>> {
-    const newMetodoPago =
-      await this.metodoPagoRepository.create(createMetodoPagoDto);
+    const newMetodoPago = this.metodoPagoRepository.create(createMetodoPagoDto);
 
     try {
       await this.metodoPagoRepository.save(newMetodoPago);
