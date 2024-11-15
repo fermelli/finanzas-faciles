@@ -6,6 +6,7 @@ import { GruposModule } from './grupos/grupos.module';
 import { MetodosPagosModule } from './metodos-pagos/metodos-pagos.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { databaseConfig } from './app/config/database.config';
+import { TransaccionesModule } from './transacciones/transacciones.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { databaseConfig } from './app/config/database.config';
     }),
     GruposModule,
     MetodosPagosModule,
+    TransaccionesModule,
   ],
   controllers: [AppController],
   providers: [AppService],

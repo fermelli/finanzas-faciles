@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Transaccion } from 'src/transacciones/entities/transaccion.entity';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 export enum TipoGrupo {
   INGRESO = 'ingreso',
@@ -15,4 +16,7 @@ export class Grupo {
 
   @Column({ name: 'tipo', type: 'enum', enum: TipoGrupo })
   tipo: TipoGrupo;
+
+  @OneToMany(() => Transaccion, (transaccion) => transaccion.grupo)
+  transacciones: Transaccion[];
 }
