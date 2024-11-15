@@ -5,13 +5,13 @@ export class BaseService {
 
   protected manejarErrores(error: any) {
     if (error.code === 'ER_DUP_ENTRY') {
-      throw new BadRequestException('El metodo de pago ya existe');
+      throw new BadRequestException('El registro ya existe');
     }
 
     if (error.code === 'WARN_DATA_TRUNCATED') {
       throw new BadRequestException('Campo incorrecto');
     }
 
-    throw new BadRequestException('Error al actualizar el metodo de pago');
+    throw new BadRequestException('Error al procesar la solicitud');
   }
 }
